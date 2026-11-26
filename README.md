@@ -1,4 +1,4 @@
-# A-Normal-Day-For-Me
+# Iemand-Naast-Je
 
 1. [Build](#build)
 	- [Tools](#build.tools)
@@ -7,6 +7,7 @@
 		- [Web](#build.tools.web)
 	- [Make](#build.make)
 2. [Testing](#test)
+3. [Wordlist](#wordlist)
 
 <h2 id="build">Build</h2>
 Building the project can be done in multiple ways.
@@ -35,3 +36,6 @@ To build for web run `em++ -std=c++26 main.cpp -o ./build/web/out.js -Wall -Wext
 
 <h2 id="test">Testing</h2>
 For creating a test build you can eather use Make and run `make test` or without make run `em++ -std=c++26 main.cpp -o ./build/dev/out.html -Wall -Wextra -sUSE_SDL=3`.
+
+<h2 id="wordlist">Wordlist</h2>
+Main loop: Core loop for program updates
