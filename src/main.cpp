@@ -1,6 +1,7 @@
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
 #include <iostream>
+#include "core/input.hpp"
 
 #ifdef __EMSCRIPTEN__
 #include <emscripten.h>
@@ -32,20 +33,31 @@ void initialize_game(void) {
     int width;
     int height;
     emscripten_get_screen_size(&width, &height);
+    
+    if (width > 1920) {
+	width = 1920;
+    }
+
+    if (height > 1080) {
+	height = 1080;
+    }
+
 #else
     int width = 1920;
     int height = 1080;
 #endif
 
-    if (!SDL_CreateWindowAndRenderer(scApp_name, width, height, SDL_WINDOW_FULLSCREEN, &sWindow, &sRenderer)) {
+    if (!SDL_CreateWindowAndRenderer(APP_NAME, width, height, SDL_WINDOW_FULLSCREEN, &spWindow, &spRenderer)) {
 		SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Encountered error when creating window/renderer: %s", SDL_GetError());
 		exit(1);
     }
 
-    if (!SDL_SetRenderLogicalPresentation(sRenderer, width, height, SDL_LOGICAL_PRESENTATION_LETTERBOX)) {
+    if (!SDL_SetRenderLogicalPresentation(spRenderer, width, height, SDL_LOGICAL_PRESENTATION_LETTERBOX)) {
 		SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Encountered error when settimg renderer logical presentation: %s", SDL_GetError());
 		exit(1);
     }
+
+    Core::setup_input_handling();
 }
 
 static void mainloop(void) {
@@ -63,6 +75,8 @@ static void mainloop(void) {
 
 int main(int argc, char** argv) {
     initialize_game();
+
+    printf("Hello, World!\n");
 
 #ifdef __EMSCRIPTEN__
     emscripten_set_main_loop(mainloop, BROWSER_FPS, true);
