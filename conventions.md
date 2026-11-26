@@ -3,10 +3,12 @@
 - Class names
 - public methods
 - public fields
+- file names
 
 ## camelCase
 - private/protected methods
 - private/protected field. Deze hebben ook een '\_' prefix.
+- folder names
 
 ## snake\_case
 - variabelen
