@@ -6,7 +6,7 @@
 #include <emscripten.h>
 #endif
 
-#define FPS 0 // 0 means that it runs at the browser refresh rate
+#define BROWSER_FPS 0 // 0 means that it runs at the browser refresh rate
 #define APP_NAME "A Normal Day For Me"
 #define APP_VERSION "0.1"
 #define APP_IDENTIFIER "nl.hellscodebase.a-normal-day-for-me"
@@ -65,7 +65,7 @@ int main(int argc, char** argv) {
     initialize_game();
 
 #ifdef __EMSCRIPTEN__
-    emscripten_set_main_loop(mainloop, FPS, true);
+    emscripten_set_main_loop(mainloop, BROWSER_FPS, true);
 #else
     for (;;) { mainloop(); }
 #endif
