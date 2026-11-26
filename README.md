@@ -8,6 +8,7 @@
 	- [Make](#build.make)
 2. [Testing](#test)
 3. [Wordlist](#wordlist)
+4. [References](#references)
 
 <h2 id="build">Build</h2>
 Building the project can be done in multiple ways.
@@ -39,3 +40,8 @@ For creating a test build you can eather use Make and run `make test` or without
 
 <h2 id="wordlist">Wordlist</h2>
 Main loop: Core loop for program updates
+
+<h2 id="references">References</h2>
+Emscripten api reference: https://emscripten.org/docs/api_reference/index.html
+SDL3 reference; https://wiki.libsdl.org/SDL3/APIByCategory
+SDL3 font reference: https://wiki.libsdl.org/SDL3_ttf/CategoryAPI
