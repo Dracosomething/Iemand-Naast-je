@@ -7,9 +7,9 @@
 #endif
 
 #define BROWSER_FPS 0 // 0 means that it runs at the browser refresh rate
-#define APP_NAME "A Normal Day For Me"
+#define APP_NAME "Iemand Naast Je"
 #define APP_VERSION "0.1"
-#define APP_IDENTIFIER "nl.hellscodebase.a-normal-day-for-me"
+#define APP_IDENTIFIER "nl.hellscodebase.iemand-naast-je"
 
 static SDL_Window* spWindow = NULL;
 static SDL_Renderer* spRenderer = NULL;
